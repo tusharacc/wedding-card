@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Bree+Serif");
 @import url("https://fonts.googleapis.com/css?family=Berkshire+Swash");
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script");
-@import url("https://fonts.googleapis.com/css?family=Herr+Von+Muellerhoff");
 @import url("https://fonts.googleapis.com/css?family=Satisfy");
 /*Boy Height*/
 #playground {
@@ -32,10 +31,29 @@
 #sky {
   width: 100%;
   height: 100%;
-  background: linear-gradient(#004466, #1a8cff);
+  background: linear-gradient(#00334d, #0059b3);
   position: fixed;
   top: 0;
-  z-index: -1;
+  z-index: -1000;
+  /*-webkit-transition:all 1s ease-in-out;
+  -moz-transition:all 1s ease-in-out;
+  transition:all 1s ease-in-out;
+  -webkit-animation: sky-color 25s ease-in-out 1 forwards ;
+  -moz-animation: sky-color 25s ease-in-out 1 forwards ;*/
+}
+
+@keyframes sky-color{
+  0%{background: linear-gradient(#004466, #1a8cff);}
+  10%{background: linear-gradient(#004466, #0080ff);}
+  20%{background: linear-gradient(#004466, #0080ff);}
+  30%{background: linear-gradient(#004466, #0073e6);}
+  40%{background: linear-gradient(#004466, #0073e6);}
+  50%{background: linear-gradient(#004466, #0066cc);}
+  60%{background: linear-gradient(#004466, #0066cc);}
+  70%{background: linear-gradient(#004466, #0066cc);}
+  80%{background: linear-gradient(#003666, #0059b3);}
+  90%{background: linear-gradient(#004466, #0059b3);} 
+  100%{background: linear-gradient(#00334d, #0059b3);}
 }
 
 #ground {
@@ -60,7 +78,7 @@
   position: fixed;
   left: 0;
   bottom: 1.7em;
-  z-index: -1;
+  z-index: -567;
 }
 
 #tree {
@@ -72,7 +90,7 @@
   position: fixed;
   left: 54em;
   bottom: 1.7em;
-  z-index: -1;
+  z-index: -123;
 }
 
 .drop {
@@ -84,7 +102,6 @@
   transform: rotate(30deg);
   -webkit-animation: fall 5s linear infinite;
   -moz-animation: fall 5s linear infinite;
-  z-index: 20;
 }
 
 @-webkit-keyframes fall {
@@ -94,7 +111,7 @@
 }
 @-moz-keyframes fall {
   to {
-    margin-top: 10em;
+    margin-top: 100%;
   }
 }
 .circle-1 {
@@ -151,20 +168,21 @@
 #cloud-3 {
   position: relative;
   top: -14em;
-  z-index: 30;
+  z-index: -30;
 }
 
 #char {
   position: fixed;
   bottom: 2em;
   width: 100%;
+  z-index: 10;
 }
 
 #boy {
   position: relative;
   left: 5em;
   top: -6.8em;
-  animation: stroll 15s 1 linear forwards;
+  animation: stroll 20s 1 ease-in forwards;
 }
 
 @keyframes stroll {
@@ -502,7 +520,7 @@
   width: 100%;
   color: orange;
   font-family: 'Berkshire Swash', cursive;
-  z-index: 1000;
+  z-index: 10;
 }
 
 #signature {
@@ -511,12 +529,12 @@
   display: block;
   height: auto;
   width: 100%;
-  top: 0.5em;
-  left: 5em;
-  font-family: 'Herr Von Muellerhoff', cursive;
-  font-size: 5em;
-  -webkit-transform: rotate(-8deg);
-  z-index: 1000;
+  top: 1.4em;
+ 
+  font-family: 'Berkshire Swash', cursive;
+  font-size: 3em;
+  z-index: 10;
+  text-align: center;
 }
 
 @-webkit-keyframes move {
@@ -667,49 +685,30 @@
     transform: translate(-60em, 0);
   }
 }
-#more-info {
-  display: inline-block;
-  text-align: center;
-  float:left;
-  
-  position: relative;
-  top: 20em;
-  font-family: 'Bree Serif', serif;
-  z-index: 10000000;
-  background-color: red;
-}
 
-#reception,
-#muhurtham,
-#venue {
-  display: none;
-  position: absolute;
-  height: 6em;
-  width: 6em;
-  background-color: #ff6666;
-  border-radius: 0.2em;
-}
+
+
 
 #save-the-date{
   display: none;
-  font-family: 'Bree Serif', serif;
-  border-bottom: solid;
-  border-color: red;
+  font-size: 1.5em;
+  color: white;
+  font-family: 'Berkshire Swash', cursive;
   text-align: center;
   position: relative;
-  top:18em;
-  background-color: #ffcccc;
-  width:18em;
-  height:1.2em;
-
-}
-body {
-  padding: 0 0 0 0;
-  margin: 0 0 0 0;
-  border: 0 0 0 0;
+  top:9em;
+  left:-15em;
 }
 
-#left-wing {
+/*#save-the-date img{
+  width:13em;
+  height:25em;
+  left: 5em;
+
+}*/
+
+
+.left-wing {
   width: 1.5em;
   height: 1.5em;
   position: relative;
@@ -717,7 +716,7 @@ body {
   animation: flap 0.1s infinite;
 }
 
-#right-wing {
+.right-wing {
   width: 1.5em;
   height: 1.5em;
   position: relative;
@@ -725,13 +724,13 @@ body {
   animation: flapZ 0.1s infinite;
 }
 
-#first-half {
+.first-half {
   /*background-color:yellow;*/
   display: inline-block;
   float: left;
 }
 
-#second-half {
+.second-half {
   /*background-color:red;*/
   display: inline-block;
   float: left;
@@ -754,17 +753,39 @@ body {
     transform: rotateY(-20deg);
   }
 }
-#butterfly {
-  position: relative;
-  
+#butterfly-1 {
+  position: absolute;
   left: 43em;
-  top: 28em;
-  z-index: -1;
+  top: 30em;
+  z-index: -10000;
   /*animation: move 10s infinite;*/
 }
 
-@keyframes move-butterfly {
+#butterfly-2 {
+  position: absolute;
+  left: 41em;
+  top: 34.4em;
+  z-index: -10000;
+  /*animation: move 10s infinite;*/
+}
+
+@keyframes move-butterfly-1 {
   100% {
-    transform: translate(50%, -300px);
+    transform: translate(80%, -60em);
   }
+}
+
+@keyframes move-butterfly-2 {
+  100% {
+    transform: translate(30%, -60em);
+  }
+}
+
+#butterfly-1-parent{
+  z-index: -1;
+  transform:rotate(30deg);
+}
+#butterfly-2-parent{
+  z-index: -1;
+  transform:rotate(-30deg);
 }

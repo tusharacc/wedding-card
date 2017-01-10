@@ -27,6 +27,7 @@ function createRain() {
     $('#rain').append('<div class="drop" id="drop' + i + '"></div>');
     $('#drop' + i).css('left', dropLeft + '%');
     $('#drop' + i).css('top', dropTop + '%');
+    $('#drop' + i).css('z-index', randRange(-1000,100000));
   }
 }
 
@@ -53,7 +54,7 @@ function calculateDistance() {
 function moveBody() {
 
   calculateDistance();
-  console.log(" Position "+ boyPos + girlPos);
+  //console.log(" Position "+ boyPos + girlPos);
   $('#boy-right-leg').css('-webkit-animation', 'move 1s linear 1 forwards');
   setTimeout(moveBoyBody, 1000);
   
@@ -62,22 +63,28 @@ function moveBody() {
     clearInterval(lastMile);
     window.requestAnimationFrame(updateWorld);
     $("#rain").hide("slow", function() {
-      $('#more-info').show("slow", function() {
-        $('#venue').show("slow", function() {
+      //$('#more-info').show("slow", function() {
+        //$('#venue').show("slow", function() {
           /*$('#venue').addClass('animated bounceInDown');*/
-          $('#butterfly').show("slow",function(){
-            $('#butterfly').css('-webkit-animation', 'move-butterfly 6s linear 1 forwards');
+          $('#butterfly-1').show("slow",function(){
+            $('#save-the-date').show("slow",function(){
+              //$('#save-the-date').addClass('animated bounceInDown');
+            })
+            $('#butterfly-1').css('-webkit-animation', 'move-butterfly-1 6s linear 1 forwards');
           });
-        });
-      });
+          $('#butterfly-2').show("slow",function(){
+            $('#butterfly-2').css('-webkit-animation', 'move-butterfly-2 6s linear 1 forwards');
+          });
+        //});
+      //});
     });
-    setTimeout(additionalInfoVenue, 1000);
+    //setTimeout(additionalInfoVenue, 1000);
   }
 }
 
 function moveBoyBody() {
-  console.log(" Position Again "+ boyPos + ' '+ girlPos);
-  console.log(boyPos + diff / (16));
+  //console.log(" Position Again "+ boyPos + ' '+ girlPos);
+  //console.log(boyPos + diff / (16));
   $('#boy').animate({
     left: '+=' + diff / (16)
   }, "slow",function(){
@@ -97,7 +104,7 @@ function additionalInfoVenue() {
   });
 }
 
-function additionalInfoWedding() {
+/*function additionalInfoWedding() {
   $('#muhurtham').animate({
     "left": "+=100px"
   }, "slow", function() {
@@ -107,7 +114,7 @@ function additionalInfoWedding() {
       $("#save-the-date").slideDown("slow");
     });
   });
-}
+}*/
 
 function moveTheBody() {
   $('#boy').css('-webkit-animation', animationName + ' 1s linear 1 forwards');
