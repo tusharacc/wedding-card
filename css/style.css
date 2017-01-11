@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Berkshire+Swash");
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script");
 @import url("https://fonts.googleapis.com/css?family=Satisfy");
+@import url('https://fonts.googleapis.com/css?family=Coiny');
 /*Boy Height*/
 #playground {
   margin: 0;
@@ -182,7 +183,7 @@
   position: relative;
   left: 5em;
   top: -6.8em;
-  animation: stroll 20s 1 ease-in forwards;
+  animation: stroll 20s 1 linear forwards;
 }
 
 @keyframes stroll {
@@ -519,7 +520,7 @@
   font-size: 2em;
   width: 100%;
   color: orange;
-  font-family: 'Berkshire Swash', cursive;
+  font-family: 'Coiny', cursive;
   z-index: 10;
 }
 
@@ -530,8 +531,7 @@
   height: auto;
   width: 100%;
   top: 1.4em;
- 
-  font-family: 'Berkshire Swash', cursive;
+  font-family: 'Coiny', cursive;
   font-size: 3em;
   z-index: 10;
   text-align: center;
@@ -693,7 +693,7 @@
   display: none;
   font-size: 1.5em;
   color: white;
-  font-family: 'Berkshire Swash', cursive;
+  font-family: 'Coiny', cursive;
   text-align: center;
   position: relative;
   top:9em;
