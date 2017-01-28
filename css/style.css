@@ -3,6 +3,9 @@
 @import url("https://fonts.googleapis.com/css?family=Oleo+Script");
 @import url("https://fonts.googleapis.com/css?family=Satisfy");
 @import url('https://fonts.googleapis.com/css?family=Coiny');
+@import url('https://fonts.googleapis.com/css?family=Chewy');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
+@import url('https://fonts.googleapis.com/css?family=Acme');
 /*Boy Height*/
 #playground {
   margin: 0;
@@ -89,7 +92,7 @@
 #tree-img {
   height: 25em;
   position: fixed;
-  left: 54em;
+  left: 38em;
   bottom: 1.7em;
   z-index: -123;
 }
@@ -191,7 +194,7 @@
     transform: translate(0, 0);
   }
   to {
-    transform: translate(55%, 0);
+    transform: translate(48.5%, 0);
   }
 }
 @keyframes strollBy1 {
@@ -399,7 +402,7 @@
 }
 #girl {
   position: absolute;
-  left: 55em;
+  left: 44em;
   top: -6.6em;
 }
 
@@ -519,23 +522,38 @@
   top: 1em;
   font-size: 2em;
   width: 100%;
-  color: orange;
-  font-family: 'Coiny', cursive;
+  white-space: nowrap;
+  overflow: hidden;
+  color: #FF6600;
+  font-family: 'Chewy', cursive;
   z-index: 10;
+  animation: type 4s steps(2000, end);
 }
 
+@keyframes type{ 
+  from { width: 0; } 
+} 
+
 #signature {
-  color: red;
+  display: none;
+  color: #FF4759;
   position: absolute;
-  display: block;
   height: auto;
   width: 100%;
-  top: 1.4em;
-  font-family: 'Coiny', cursive;
+  top: 1.5em;
+  font-family: 'Chewy', cursive;
   font-size: 3em;
   z-index: 10;
   text-align: center;
+  /*white-space: nowrap;
+  overflow: hidden;
+  animation-delay: 6s;
+  animation: typeSig 4s steps(60, end);*/
 }
+
+@keyframes typeSig{ 
+  from { width: 0; } 
+} 
 
 @-webkit-keyframes move {
   0% {
@@ -682,7 +700,7 @@
     transform: translate(100%, 0);
   }
   to {
-    transform: translate(-60em, 0);
+    transform: translate(0, 0);
   }
 }
 
@@ -692,12 +710,12 @@
 #save-the-date{
   display: none;
   font-size: 1.5em;
-  color: white;
-  font-family: 'Coiny', cursive;
+  color: #ffff00;
+  font-family: 'Chewy', cursive;
   text-align: center;
   position: relative;
-  top:9em;
-  left:-15em;
+  top:10em;
+  left:-12em;
 }
 
 /*#save-the-date img{
@@ -754,17 +772,17 @@
   }
 }
 #butterfly-1 {
-  position: absolute;
-  left: 43em;
+  position: fixed;
+  left: 40em;
   top: 30em;
   z-index: -10000;
   /*animation: move 10s infinite;*/
 }
 
 #butterfly-2 {
-  position: absolute;
-  left: 41em;
-  top: 34.4em;
+  position: fixed;
+  left: 40em;
+  top: 37.4em;
   z-index: -10000;
   /*animation: move 10s infinite;*/
 }

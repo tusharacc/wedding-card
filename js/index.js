@@ -3,10 +3,12 @@ var nbCloud = 3;
 var count = 0;
 var lastMile, moveToZero, cloud2Timer, cloud3Timer, diff, boyPos, girlPos;
 var boy = document.getElementById('boy');
+var text = document.getElementById('text')
 
 boy.addEventListener("webkitAnimationEnd", animation_end);
 boy.addEventListener("animationend", animation_end);
 boy.addEventListener("oanimationend", animation_end);
+text.addEventListener("animationend",show_signature);
 
 // Make it rain
 createRain();
@@ -30,7 +32,11 @@ function createRain() {
     $('#drop' + i).css('z-index', randRange(-1000,100000));
   }
 }
-
+function show_signature(){
+  $('#signature').show("slow", function() {
+    //$('#signature').addClass('animated bounceInDown');
+  });
+}
 function animation_end() {
   boy.removeEventListener("webkitAnimationEnd", animation_end);
   boy.removeEventListener("animationend", animation_end);
@@ -123,13 +129,13 @@ function moveTheBody() {
 function straightLeg() {
   $('#boy-right-leg').css('-webkit-animation', 'movetozero 1s linear 1 forwards');
 }
-var text = "Once upon a time, a boy met a girl..........for the rest of the story join us at our wedding";
+var text = "Once upon a time, a boy met a girl....for the rest of the story join us at our wedding";
 
 var i = 0;
 
 var elem = document.getElementById("text");
 
-var timerFunc = window.setInterval(writeText, 150);
+//var timerFunc = window.setInterval(writeText, 150);
 
 function writeText() {
   elem.innerHTML = elem.innerHTML + text[i];
@@ -139,6 +145,7 @@ function writeText() {
 
     if (text == "Priya & Tushar") {
       clearInterval(timerFunc);
+      //movingText()
     } else {
       i = 0;
       text = "Priya & Tushar";
@@ -160,11 +167,11 @@ var moreInfo = 'Engagement is on 8th March 2016 from 8:00 AM onwards, Reception 
 
 function movingText() {
 
-  var elem = document.getElementById('more-info');
-  elem.style.position = 'relative';
+  var elem = document.getElementById('text');
+  //elem.style.position = 'relative';
   //elem.style.left='100%';
-  elem.innerHTML = moreInfo;
-  $('#more-info').css('-webkit-animation', 'scrolltext 25s linear infinite');
+  //elem.innerHTML = text;
+  $('#text').css('-webkit-animation', 'scrolltext 10s linear infinite');
 }
 
 //movingText();
